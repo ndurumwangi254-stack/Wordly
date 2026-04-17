@@ -3,9 +3,99 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+     <title>Tims Wordly - Dictionary Lookup</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+    <!-- Header Section -->
+    <header class="header">
+        <div class="header-container">
+            <h1> Wordly Dictionary</h1>
+            <p class="tagline">Discover the meaning of words.</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Search Section -->
+        <section class="search-section">
+            <form id="searchForm" class="search-form" aria-label="Search for a word">
+                <div class="input-group">
+                    <input 
+                        type="text" 
+                        id="searchInput" 
+                        class="search-input" 
+                        placeholder="Enter a word to search..."
+                        aria-label="Word search input"
+                        autocomplete="off"
+                        required
+                    >
+                    <button 
+                        type="submit" 
+                        class="search-button" 
+                        aria-label="Search button"
+                    >
+                        Search
+                    </button>
+                </div>
+                <div id="errorMessage" class="error-message" role="alert" aria-live="polite"></div>
+            </form>
+        </section>
+
+        <!-- Results Section -->
+        <section id="resultsSection" class="results-section hidden" role="region" aria-labels="Word search results" aria-live="polite">
+            
+            <!-- Word Header -->
+            <div id="wordHeader" class="word-header">
+                <div class="word-title">
+                    <h2 id="wordTitle"></h2>
+                    <span id="phonetic" class="phonetic"></span>
+                </div>
+                <button id="audioButton" class="audio-button" aria-label="Pronounce word">
+                    🔊 Pronounce
+                </button>
+            </div>
+
+            <!-- Part of Speech and Definitions -->
+            <div id="meaningsContainer" class="meanings-container">
+                
+            </div>
+
+            <!-- Synonyms Section -->
+            <div id="synonymsSection" class="synonyms-section hidden">
+                <h3>Synonyms</h3>
+                <div id="synonymsList" class="synonyms-list">
+                    
+                </div>
+            </div>
+
+            <!-- Antonyms Section -->
+            <div id="antonymsSection" class="antonyms-section hidden">
+                <h3>Antonyms</h3>
+                <div id="antonymsList" class="antonyms-list">
+                    
+                </div>
+            </div>
+
+            <!-- Source Section -->
+            <div id="sourceSection" class="source-section hidden">
+                <h3>Source</h3>
+                <a id="sourceLink" href="#" target="_blank" rel="noopener noreferrer" aria-label="View source"></a>
+            </div>
+        </section>
+
+        <!-- Loading Indicator -->
+        <div id="loadingSpinner" class="loading-spinner hidden" role="status" aria-label="Loading">
+            <div class="spinner"></div>
+            <p>Searching...</p>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>Powered by <a href="https://dictionaryapi.dev/" target="_blank" rel="noopener noreferrer">Free Dictionary API</a></p>
+    </footer>
+
+    <script src="index.js"></script>
 </body>
 </html>
